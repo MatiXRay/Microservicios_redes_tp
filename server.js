@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Middleware de logging por request
+// Middleware de logging por request, muestra en consola las peticiones https y la fecha/hora
 app.use((req, res, next) => {
   console.log(`[${req.method}] ${req.url} - ${new Date().toISOString()}`);
   next();

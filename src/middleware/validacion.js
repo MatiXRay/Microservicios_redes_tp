@@ -26,7 +26,7 @@ const validarDispositivo = (req, res, next) => {
   next();
 };
 
-//middleware de autenticacion
+//middleware de autenticacion, este middleware va a solicitar que el user tenga en el header la clave Authorization = "1234". Sino no va a responder en las solicitudes https.
 const autenticar = (req, res, next) => {
   if (req.headers["authorization"] !== "1234") {
     return res.status(401).json({ error: "No autorizado. Header 'Authorization: 1234' requerido." });
